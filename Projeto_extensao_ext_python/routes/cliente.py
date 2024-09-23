@@ -73,7 +73,7 @@ def deletar_cliente(cliente_id):
          #Deletar cliente
         
         cliente_editado = Cliente.get_by_id(cliente_id)
-        cliente.delete_instance()
-
+        Cliente.delete_instance()
+        Cliente.delete.save()
 
         return {'deleted': 'ok'}
