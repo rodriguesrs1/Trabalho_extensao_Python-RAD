@@ -1,11 +1,12 @@
-from peewee import Model, CharField, DateField
+from peewee import Model, CharField, DateTimeField
 from database.database import db
+import datetime
 
 
 class Cliente(Model):
-    Nome = CharField()
+    nome = CharField()
     email = CharField()
-    data_registro = DateField()
+    data_registro = DateTimeField(default=datetime.datetime.now)
 
     class Meta:
         database = db # This model uses the "people.db" database.
