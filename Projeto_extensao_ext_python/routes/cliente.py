@@ -21,7 +21,10 @@ def inserir_cliente():
          novo_usuario = Cliente.create(
                  nome = data['nome'],
                  email = data['email'],
-                 
+                 telefone = data['telefone'],
+                 endereco = data['endereco'],
+                 pedido = data['pedido'],
+                
          )
 
          return render_template('item_cliente.html', cliente=novo_usuario)
@@ -61,6 +64,9 @@ def atualizar_cliente(cliente_id):
         cliente_editado = Cliente.get_by_id(cliente_id)
         cliente_editado.nome = data['nome']
         cliente_editado.email = data['email']
+        cliente_editado.telefone = data['telefone']
+        cliente_editado.endereco = data['endereco']
+        cliente_editado.pedido = data['pedido']
         cliente_editado.save()
 
 
